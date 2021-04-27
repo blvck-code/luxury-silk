@@ -1,5 +1,5 @@
-export const localhost = "http://127.0.0.1:8000";
-// export const localhost = "http://oluoch.pythonanywhere.com";
+// export const localhost = "http://127.0.0.1:8000";
+export const localhost = "http://oluoch.pythonanywhere.com";
 
 const apiURL = "/api";
 
