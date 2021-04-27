@@ -44,24 +44,22 @@ const Nav = ({ fetchCart, cart, auth, logOut }) => {
 
   const offset = -20;
 
-  // window.addEventListener("scroll", () => {
-  //   if (stickyEl) {
-  //     const stickyPos = stickyEl.getBoundingClientRect().top;
-  //     if (window.pageXOffset >= stickyPos + offset) {
-  //       // stickyEl.style.position = "fixed";
-  //       // stickyEl.style.top = "0px";
-  //       // stickyEl.style.width = "100%";
-  //       // stickyEl.style.zIndex = "100";
-  //       stickyEl.classList.add("fixed");
-  //     } else if (window.pageXOffset <= stickyPos + offset) {
-  //       stickyEl.classList.remove("fixed");
-  //       // stickyEl.style.position = "static";
-  //       // stickyEl.style.top = "";
-  //     }
-  //   }
-  // });
-
-  console.log(pathname);
+  window.addEventListener("scroll", () => {
+    if (stickyEl) {
+      const stickyPos = stickyEl.getBoundingClientRect().top;
+      if (window.pageXOffset >= stickyPos + offset) {
+        // stickyEl.style.position = "fixed";
+        // stickyEl.style.top = "0px";
+        // stickyEl.style.width = "100%";
+        // stickyEl.style.zIndex = "100";
+        stickyEl.classList.add("fixed");
+      } else if (window.pageXOffset <= stickyPos + offset) {
+        stickyEl.classList.remove("fixed");
+        // stickyEl.style.position = "static";
+        // stickyEl.style.top = "";
+      }
+    }
+  });
 
   return (
     <>
@@ -106,7 +104,7 @@ const Nav = ({ fetchCart, cart, auth, logOut }) => {
                     <i className="fa fa-twitter" />
                   </Link>
                 </div>
-                <div className="nav-info">
+                <div className="nav-info hide-mobile">
                   <p>
                     For all orders made, the standard delivery timeline is
                     between

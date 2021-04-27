@@ -220,7 +220,7 @@ const Home = ({ products, fetchCart, getItems, auth, cart, loading }) => {
         </div>
         <section className="products">
           <Container className="products-wrapper">
-            <h1 className="home-title">trending products</h1>
+            <h1 className="home-title">hair shampoo</h1>
             {loading && <ProductsSkeleton />}
             {shampoo && (
               <div className="products-items">
@@ -251,7 +251,40 @@ const Home = ({ products, fetchCart, getItems, auth, cart, loading }) => {
             )}
           </Container>
         </section>
-        <section className="oil-product">
+        <section className="products">
+          <Container className="products-wrapper">
+            <h1 className="home-title">hair oil</h1>
+            {loading && <ProductsSkeleton />}
+            {oil && (
+              <div className="products-items">
+                {oil?.length > 0 &&
+                  oil.map((product) => (
+                    <div className="products-item">
+                      {product.sold_out && (
+                        <div className="product-sold_out">
+                          <h4>sold out</h4>
+                        </div>
+                      )}
+                      <Link to={detailLink(product.category, product.slug)}>
+                        <img
+                          className="products-item__img"
+                          src={product.image}
+                          alt=""
+                        />
+                      </Link>
+                      <div className="products-item__info">
+                        <Link to={detailLink(product.category, product.slug)}>
+                          <p>{product.title}</p>
+                        </Link>
+                        <h3>Ksh {product.price}</h3>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            )}
+          </Container>
+        </section>
+        {/* <section className="oil-product">
           <div className="row">
             <div className="oil-product-info">
               <h5>put it in neutral</h5>
@@ -338,7 +371,7 @@ const Home = ({ products, fetchCart, getItems, auth, cart, loading }) => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
         <section className="products">
           <Container className="products-wrapper">
             <h1 className="home-title">Hair Moisturizer</h1>
